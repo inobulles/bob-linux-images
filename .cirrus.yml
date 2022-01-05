@@ -3,7 +3,7 @@ task:
     image: debian:latest
   install_script:
     - apt update
-    - apt install -y debootstrap
+    - apt install -y debootstrap xz
   create_script:
     - sh amd64.ubuntu.focal.sh
   amd64.ubuntu.focal_artifacts:
