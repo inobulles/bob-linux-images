@@ -28,5 +28,5 @@ cd images/$NAME
 tar cf ../../build/$NAME.tar .
 cd ../..
 
-xz -9 build/$NAME.tar
+xz -T0 -9 build/$NAME.tar
 mv build/$NAME.tar.xz build/$NAME.txz
