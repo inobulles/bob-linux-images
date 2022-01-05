@@ -8,14 +8,20 @@ NAME=amd64.ubuntu.focal
 
 # create
 
+echo "[$NAME] Creating ..."
+
 mkdir images/$NAME
 debootstrap focal images/$NAME http://archive.ubuntu.com/ubuntu/
 
 # test
 
+echo "[$NAME] Testing ..."
+
 [ "$(chroot images/$NAME uname)" = "Linux" ] || echo "🔴 Something went wrong in $NAME!"
 
 # package
+
+echo "[$NAME] Packaging ..."
 
 cd images/$NAME
 
