@@ -2,6 +2,7 @@ task:
   container:
     image: debian:latest
   install_script:
+    - apt update
     - apt install -y debootstrap
   create_script:
     - sh amd64.ubuntu.focal.sh
