@@ -2,15 +2,6 @@ task:
   container:
     image: debian:latest
   create:
-    - mkdir -p images
-    - mkdir images/amd64.ubuntu.focal
-    - debootstrap focal images/amd64.ubuntu.focal http://archive.ubuntu.com/ubuntu/
-  test:
-    - [ "$(chroot images/amd64.ubuntu.focal uname)" = "Linux" ] || echo "🔴 Something went wrong in amd64.ubuntu.focal!"
-  package:
-    - mkdir -p build
-    - cd images/amd64.ubuntu.focal
-    - tar cf build/amd64.ubuntu.focal.tar images/amd64.ubuntu.focal
-    - xz -9 build/amd64.ubuntu.focal.tar
+    - sh amd64.ubuntu.focal.sh
   amd64.ubuntu.focal_artifacts:
-    path: "build/amd64.ubuntu.focal.tar.xz"
+    path: "build/amd64.ubuntu.focal.txz"
