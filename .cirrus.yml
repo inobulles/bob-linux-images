@@ -1,6 +1,8 @@
 task:
   container:
     image: debian:latest
+  install_debootstrap:
+    - apt install -y debootstrap
   create_script:
     - sh amd64.ubuntu.focal.sh
   amd64.ubuntu.focal_artifacts:
