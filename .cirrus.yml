@@ -6,5 +6,8 @@ task:
     - apt install -y debootstrap xz-utils
   create_script:
     - sh amd64.ubuntu.focal.sh
+    - sh amd64.ubuntu.jammy.sh
   amd64.ubuntu.focal_artifacts:
     path: "build/amd64.ubuntu.focal.txz"
+  amd64.ubuntu.jammy_artifacts:
+    path: "build/amd64.ubuntu.jammy.txz"
